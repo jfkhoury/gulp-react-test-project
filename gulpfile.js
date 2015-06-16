@@ -1,6 +1,7 @@
 "use strict";
 
 var gulp = require("gulp");
+var open = require("gulp-open");
 var source = require("vinyl-source-stream");
 var livereload = require('gulp-livereload');
 var browserify = require("browserify");
@@ -24,5 +25,9 @@ gulp.task("default", function () {
         .on("update", rebundle);
 
     livereload.listen(35729);
+
+    gulp.src('./index.html')
+        .pipe(open());
+
     return rebundle();
 });
