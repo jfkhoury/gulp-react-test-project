@@ -1,0 +1,3 @@
+--compilers js:test/support/register6to5
+--reporter spec
+--require test/support/setup
